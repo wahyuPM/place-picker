@@ -10,11 +10,11 @@ function Modal({ open, children, onClose }) {
     } else {
       dialog.current.close();
     }
-  }, [open]);
+  }, [open]); //check if open props is change
 
   return createPortal(
     <dialog className="modal" ref={dialog} onClose={onClose}>
-      {children}
+      {open ? children : null}
     </dialog>,
     document.getElementById('modal')
   );
